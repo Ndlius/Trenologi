@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpage Homepage</title>
+  <!-- Add your CSS or Bootstrap link here -->
+  <style>
+    /* Basic styles, you can add more */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #555;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #777;
+    }
+    .search-button:hover {
+      background-color: #0056b3;
+    }
+    /* Additional style for food-button */
+    .food-button {
+      background-color: #d9534f;
+    }
+    .food-button:hover {
+      background-color: #c9302c;
+    }
+    /* Additional style for tech-button */
+    .tech-button {
+      background-color: #5bc0de;
+    }
+    .tech-button:hover {
+      background-color: #46b8da;
+    }
+    /* Additional style for articles */
+    .article {
+      display: none;
+    }
+    .article.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <button>News</button>
+      <button class="food-button" onclick="toggleArticle('superfood-article')">Food</button>
+      <button>Tips & Tricks</button>
+      <button class="tech-button" onclick="toggleArticle('ai-article')">Technology</button>
+      <button>Recommendations</button>
+      <button class="search-button">Search</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Your main content goes here -->
+    <div class="article" id="superfood-article">
+      <h2><a href="#diabetes-food" class="article-link" onclick="toggleArticle('superfood-article')">Makanan Superfood untuk Penderita Diabetes</a></h2>
+      <!-- Isi artikel Food -->
+    </div>
+    <div class="article" id="ai-article">
+      <h2>Kecerdasan Buatan: Gambaran Singkat</h2>
+      <!-- Isi artikel AI -->
+    </div>
+
+    <div id="diabetes-food" class="article">
+      <h2>Makanan yang Cocok untuk Penderita Diabetes</h2>
+      <p>Penderita diabetes harus memperhatikan pola makan mereka. Berikut adalah beberapa makanan yang cocok untuk penderita diabetes:</p>
+      <ul>
+        <li>Alpukat: Kaya akan lemak sehat dan serat.</li>
+        <li>Blueberry: Kandungan antioksidannya membantu mengontrol gula darah.</li>
+        <li>Brokoli: Nutrisi tinggi dan sedikit pengaruh pada peningkatan gula darah.</li>
+        <li>Kacang Almond: Sumber protein yang bagus dan rendah karbohidrat.</li>
+        <!-- Tambahkan lebih banyak makanan yang cocok untuk penderita diabetes -->
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <nav>
+      <button>Tentang Kami</button>
+      <button>Privacy Policy</button>
+      <button>Produk Kami</button>
+    </nav>
+  </footer>
+
+  <script>
+    function toggleArticle(articleId) {
+      const articles = document.querySelectorAll('.article');
+      articles.forEach(article => {
+        if (article.id === articleId) {
+          article.classList.add('active');
+        } else {
+          article.classList.remove('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
